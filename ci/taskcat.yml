@@ -17,6 +17,8 @@ global:
     - us-east-2
     - us-west-1
     - us-west-2
+    - cn-north-1
+    - cn-northwest-1
   reporting: true
 tests:
   rocketmq-2-AZ:
@@ -30,6 +32,8 @@ tests:
       - eu-central-1
       - eu-west-2
       - us-west-1
+      - cn-north-1
+      - cn-northwest-1
     template_file: rocketmq-master.template
   rocketmq-sa-east-1-2-AZ:
     parameter_input: rocketmq-sa-east-1.json
@@ -44,4 +48,5 @@ tests:
       - us-east-1
       - us-east-2
       - us-west-2
+      - cn-northwest-1
     template_file: rocketmq-master.template

@@ -8,10 +8,6 @@
     "ParameterValue": "10.0.0.0/16"
   },
   {
-    "ParameterKey": "BrokerClusterCount",
-    "ParameterValue": "3"
-  },
-  {
     "ParameterKey": "NumberOfAZs",
     "ParameterValue": "2"
   },
@@ -22,9 +18,5 @@
   {
     "ParameterKey":"QSS3BucketName",
     "ParameterValue":"$[taskcat_autobucket]"
-  },
-  {
-    "ParameterKey":"BrokerNodeInstanceType",
-    "ParameterValue":"m5.large"
   }
 ]
