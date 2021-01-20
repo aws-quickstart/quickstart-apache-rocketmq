@@ -13,7 +13,7 @@ You can also use the AWS CloudFormation templates as a starting point for your o
 
 ## Architecure
 
-![Quick Start architecture for RocketMQ on AWS](./assets/architecture.jpeg)
+![Quick Start architecture for RocketMQ on AWS](docs/images/architecture.jpeg)
 
 For architectural details, best practices, step-by-step instructions, and customization options, see the
 [deployment guide](https://www.amazonaws.cn/solutions/RocketMQ/).
