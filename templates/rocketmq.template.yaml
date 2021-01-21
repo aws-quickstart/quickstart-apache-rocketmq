@@ -411,15 +411,9 @@ Resources:
     Condition: Launch1NameServer
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-nameserver.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-nameserver.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
@@ -459,15 +453,9 @@ Resources:
     Condition: Launch2NameServer
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-nameserver.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-nameserver.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
@@ -507,15 +495,9 @@ Resources:
     Condition: Launch3NameServer
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-nameserver.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
@@ -555,15 +537,9 @@ Resources:
     DependsOn: RocketMQNameServerNode0
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
@@ -604,15 +580,9 @@ Resources:
     DependsOn: RocketMQNameServerNode0
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
@@ -654,15 +624,9 @@ Resources:
     DependsOn: RocketMQNameServerNode0
     Properties:
       TemplateURL: !Sub
-        - https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template
-        - S3Region: !If
-            - UsingDefaultBucket
-            - !Ref 'AWS::Region'
-            - !Ref 'QSS3BucketRegion'
-          S3Bucket: !If
-            - UsingDefaultBucket
-            - !Sub '${QSS3BucketName}-${AWS::Region}'
-            - !Ref 'QSS3BucketName'
+        - 'https://${S3Bucket}.s3.${S3Region}.${AWS::URLSuffix}/${QSS3KeyPrefix}templates/rocketmq-node-broker.template.yaml'
+        - S3Region: !If [ UsingDefaultBucket, !Ref 'AWS::Region', !Ref QSS3BucketRegion ]
+          S3Bucket: !If [ UsingDefaultBucket, !Sub '${QSS3BucketName}-${AWS::Region}', !Ref QSS3BucketName ]
       Parameters:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
