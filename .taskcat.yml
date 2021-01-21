@@ -2,6 +2,10 @@ project:
   name: quickstart-apache-rocketmq
   owner: quickstart-eng@amazon.com
   package_lambda: false
+  parameters:
+    QSS3BucketName: $[taskcat_autobucket]
+    QSS3BucketRegion: $[taskcat_current_region]
+    QSS3KeyPrefix: 'quickstart-apache-rocketmq'
   regions:
   - ap-northeast-1
   - ap-northeast-2
@@ -28,9 +32,6 @@ tests:
      NumberOfAZs: '2'
      RemoteAccessCIDR: '0.0.0.0/0'
      VolumeSize: '100'
-     QSS3BucketName: $[taskcat_autobucket]
-     QSS3BucketRegion: $[taskcat_current_region]
-     QSS3KeyPrefix: 'quickstart-apache-rocketmq'
      KeyPairName: $[taskcat_getkeypair]
      NameServerInstanceType: 'm5.large'
      BrokerNodeInstanceType: 'm5.xlarge'
@@ -45,9 +46,6 @@ tests:
       NumberOfAZs: '3'
       RemoteAccessCIDR: '0.0.0.0/0'
       VolumeSize: '100'
-      QSS3BucketName: $[taskcat_autobucket]
-      QSS3BucketRegion: $[taskcat_current_region]
-      QSS3KeyPrefix: 'quickstart-apache-rocketmq'
       KeyPairName: $[taskcat_getkeypair]
       NameServerInstanceType: 'm5.large'
       BrokerNodeInstanceType: 'm5.xlarge'
@@ -62,9 +60,6 @@ tests:
       NumberOfAZs: '3'
       RemoteAccessCIDR: '0.0.0.0/0'
       VolumeSize: '100'
-      QSS3BucketName: $[taskcat_autobucket]
-      QSS3BucketRegion: $[taskcat_current_region]
-      QSS3KeyPrefix: 'quickstart-apache-rocketmq'
       KeyPairName: $[taskcat_getkeypair]
       NameServerInstanceType: 'm5.large'
       BrokerNodeInstanceType: 'm5.xlarge'
