@@ -5,7 +5,7 @@ project:
   parameters:
     QSS3BucketName: $[taskcat_autobucket]
     QSS3BucketRegion: $[taskcat_current_region]
-    QSS3KeyPrefix: 'quickstart-apache-rocketmq'
+    QSS3KeyPrefix: 'quickstart-apache-rocketmq/'
   regions:
   - ap-northeast-1
   - ap-northeast-2
