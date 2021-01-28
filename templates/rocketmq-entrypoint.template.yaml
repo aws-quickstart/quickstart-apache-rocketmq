@@ -1,6 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: (SO8006) - Deploy Apache RocketMQ Cluster on a New VPC in AWS (qs-1rhfjtiki)
 Metadata:
+  QuickStartDocumentation:
+    EntrypointName: "Launch into an new VPC"
+    Order: "1"
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
