@@ -3,7 +3,7 @@ Description: (SO8006) - Deploy Apache RocketMQ Cluster on a existing VPC in AWS 
 Metadata:
   QuickStartDocumentation:
     EntrypointName: "Launch into an existing VPC"
-    Order: "2"
+    Order: "5"
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
@@ -12,7 +12,6 @@ Metadata:
           - NumberOfAZs
           - AvailabilityZones
           - VPCID
-          - VPCCIDR
           - PrivateSubnet1ID
           - PrivateSubnet2ID
           - PrivateSubnet3ID

@@ -66,19 +66,20 @@ for example: ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
 . To login to Nameserver or Broker Node from Bastion Host, and how to get an IP from Nameserver or Broker node, log in to ec2 console and click on the corresponding ec2  instance, as shown in the following
 
 image::../images/NameServerIPAddress.png[NameServerAddress,width=100%,height=100%]
+
+[source,bash]
+--
 Examples:(ec2-user@ip-10-0-136-135) $ ssh 10.0.6.235
 
 Last login: Wed Jan  6 04:55:01 2021 from ip-10-0-136-135.cn-north-1.compute.internal
 
-__|  __|_  )
-
-_|  ( / Amazon Linux 2 AMI
-
-___|\___|___|
-
+       __|  __|_  )
+       _|  (     /   Amazon Linux 2 AMI
+      ___|\___|___|
 https://aws.amazon.com/amazon-linux-2/
 
 [ec2-user@ip-10-0-6-235 ~]$
+--
 
 . Once you're signed in to Nameserver or Broker Node, you can use Apache RocketMQ’s own command-line tools.
 
