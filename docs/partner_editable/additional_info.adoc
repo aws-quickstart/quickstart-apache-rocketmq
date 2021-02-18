@@ -1,14 +1,14 @@
 // Add steps as necessary for accessing the software, post-configuration, and testing. Don’t include full usage instructions for your software, but add links to your product documentation for that information.
 //Should any sections not be applicable, remove them
 
-== Test the deployment
-// If steps are required to test the deployment, add them here. If not, remove the heading
-
-
 == Best practices for using {partner-product-short-name} on AWS
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
+Please check the following links from Apache RocketMQ official website for best practice of using RocketMQ:
 
-_Add any best practices for using the software._
+. link:https://rocketmq.apache.org/docs/best-practice-namesvr/[Best Practice of Nameserver]
+. link:https://rocketmq.apache.org/docs/best-practice-broker/[Best Practice of Broker]
+. link:https://rocketmq.apache.org/docs/best-practice-producer/[Best Practice of Producer]
+. link:https://rocketmq.apache.org/docs/best-practice-consumer/[Best Practice of Consumer]
 
 == Security
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
