@@ -1,6 +1,9 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: (SO8006) - This template is used for setting up a single rocketmq broker (qs-1rhfjtinj)
   node
+Metadata:
+  QuickStartDocumentation:
+    Order: "4"
 Parameters:
   VPC:
     Type: AWS::EC2::VPC::Id
