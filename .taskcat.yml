@@ -38,7 +38,7 @@ tests:
 #     NameServerClusterCount: '1'
 #    regions:
 #      - cn-north-1
-#    template: templates/rocketmq-entrypoint.template.yaml
+#    template: templates/rocketmq-entrypoint-new-vpc.template.yaml
 #  rocketmq-cn-northwest-1-3-AZ:
 #    parameters:
 #      AvailabilityZones: $[taskcat_genaz_3]
@@ -52,7 +52,7 @@ tests:
 #      NameServerClusterCount: '1'
 #    regions:
 #      - cn-northwest-1
-#    template: templates/rocketmq-entrypoint.template.yaml
+#    template: templates/rocketmq-entrypoint-new-vpc.template.yaml
   rocketmq-us-east-1-3-AZ:
     parameters:
       AvailabilityZones: $[taskcat_genaz_3]
@@ -66,4 +66,4 @@ tests:
       NameServerClusterCount: '1'
     regions:
       - us-east-1
-    template: templates/rocketmq-entrypoint.template.yaml
+    template: templates/rocketmq-entrypoint-new-vpc.template.yaml
