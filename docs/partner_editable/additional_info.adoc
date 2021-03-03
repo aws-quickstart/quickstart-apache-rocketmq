@@ -115,8 +115,6 @@ image::../images/ec2.png[ec2,width=90%,height=90%]
 image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 
 
-== Test the deployment
-// If steps are required to test the deployment, add them here. If not, remove the heading
 
 
 == Best practices for using {partner-product-short-name} on AWS
@@ -128,12 +126,5 @@ Please check the following links from Apache RocketMQ official website for best 
 . link:https://rocketmq.apache.org/docs/best-practice-producer/[Best Practice of Producer]
 . link:https://rocketmq.apache.org/docs/best-practice-consumer/[Best Practice of Consumer]
 
-== Security
-// Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
 
-_Add any security-related information._
 
-== Other useful information
-//Provide any other information of interest to users, especially focusing on areas where AWS or cloud usage differs from on-premises usage.
-
-_Add any other details that will help the customer use the software on AWS._
