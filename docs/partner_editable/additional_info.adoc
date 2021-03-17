@@ -28,7 +28,7 @@ or
 
 ^|4
 ^|/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar
-^|App for Apache RocketMQ   Console (only exist on Nameserver instances)
+^|App for Apache RocketMQ console (only exist on Nameserver instances)
 |===
 
 Broker Node
@@ -62,16 +62,32 @@ or
 |===
 
 === How do I log in to Apache RocketMQ's Nameserver and Broker Node?
-. Use the ssh-add command to add pem keypair, for example: ssh-add -k /Users/username/tmp/rocketmqXXX.pem
-. Sign in to Bastion Host,
-for example: ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
+. Use the ssh-add command to add pem keypair:
+
+Example:
+
+[source,bash]
+--
+ssh-add -k /Users/username/tmp/rocketmqXXX.pem
+--
+
+[start=2]
+. Sign in to Bastion Host:
+Example:
+[source,bash]
+--
+ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
+--
+[start=3]
 . To login to Nameserver or Broker Node from Bastion Host, and how to get an IP from Nameserver or Broker node, log in to ec2 console and click on the corresponding ec2  instance, as shown in the following
 
 image::../images/NameServerIPAddress.png[NameServerAddress,width=100%,height=100%]
 
+Examples:
+
 [source,bash]
 --
-Examples:(ec2-user@ip-10-0-136-135) $ ssh 10.0.6.235
+(ec2-user@ip-10-0-136-135) $ ssh 10.0.6.235
 
 Last login: Wed Jan  6 04:55:01 2021 from ip-10-0-136-135.cn-north-1.compute.internal
 
@@ -83,33 +99,47 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-0-6-235 ~]$
 --
 
+[start=4]
 . Once you're signed in to Nameserver or Broker Node, you can use Apache RocketMQ’s own command-line tools.
 
 
 === How to view Web Console from Apache RocketMQ using your browser
 The current deployment scenario has Web Console applications installed on each Nameserver's instance, but since Nameserver's instance is running on the private subnet, it is not possible to access the 8080 port of the nameserver Private IP directly through a browser, please follow the steps below to establish an SSH Tunnel to Bastion host and access The Nameserver's Web Console via SSH Tunnel.
 
-. Using the ssh command to establish a ssh connection to Bastion Host, some of the red parameters in the following image need to be replaced with parameters corresponding to the user environment
-Command ：ssh -qTfnN -D PORTNUMBER -i KEYPAIR USERNAME@HOSTNAME
-Example: ssh -qTfnN -D 40011  -i "rocketMQ.pem" ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn
-. Once you've set up ssh Tunnel, you'll need to set up proxy in your browser, which has a lot of plug-ins that automatically select Proxy, we are using Switchy Omega as an example in this article.
-. To install the SwitchyOmega browser  plug-in, Edge browser please visit link:https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[this link], Firefox browser access link:https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[this link], Chrome browser access link:https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[this link].
-. Once the Switchy Omega plug-in is installed, open the plug-in's options page and click on the "New Profile" on the left, as shown in the following image
+. Using the ssh command to establish a ssh connection to the bastion host, some of the parameters in the following image need to be replaced with parameters corresponding to the user environment.
+
+NOTE: These parameters are denoted in [red]#red#
+
+Command ：
+[source,bash]
+--
+ssh -qTfnN -D <PORTNUMBER> -i <KEYPAIR> <USERNAME>@<HOSTNAME>
+--
+Example:
+[source,bash]
+--
+ssh -qTfnN -D 40011  -i "rocketMQ.pem" ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn
+--
+. Once you've set up ssh tunnel, you'll need to set up proxy in your browser, which has a lot of plug-ins that automatically select proxy, we are using SwitchyOmega as an example in this article.
+. To install the SwitchyOmega browser  plug-in in the following browsers: (Microsoft Edge browser please visit link:https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[this link], Firefox browser access link:https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[this link], Chrome browser access link:https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[this link]).
+. Once the SwitchyOmega plug-in is installed, open the plug-in's options page and click on the "New Profile" on the left, as shown in the following image:
 
 image::../images/switchyOmega1.png[SwitchyOmega,width=50%,height=50%]
-. Enter the name of New Profile in the pop-up window and click the Create button at the bottom right, as follows:
+[start=5]
+. Enter the name of "New Profile" in the pop-up window and click the create button at the bottom right, as follows:
 
 image::../images/switchyOmega2.png[SwitchyOmega,width=50%,height=50%]
-
-. Enter the information for Proxy Server, as shown below, and click on the Apple changes at the bottom left, noting that the value for Port needs to be set to the local port where you set up the ssh tunnel, see the number after the first step -D parameter, as shown below:
-. Click on the SwitchyOmega plug-in and select the RocketMQ profile you just created, as shown below
+[start=6]
+. Enter the information for proxy server, as shown below, and click on the apple changes at the bottom left, noting that the value for port needs to be set to the local port where you set up the ssh tunnel, see the number after the first step "-D" parameter, as shown below:
+. Click on the SwitchyOmega plug-in and select the RocketMQ profile you just created, as shown below:
 
 image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
+[start=8]
 . After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
-. Enter the private ip address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below
+. Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
 
 image::../images/ec2.png[ec2,width=90%,height=90%]
-
+[start=10]
 . The browser should be able to display the deployed RocketMQ cluster properly, as shown in the following image:
 
 image::../images/rocketMQConsole.png[console,width=90%,height=90%]
