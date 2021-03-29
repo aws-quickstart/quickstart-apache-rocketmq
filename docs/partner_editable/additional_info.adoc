@@ -2,7 +2,7 @@
 //Should any sections not be applicable, remove them
 
 
-#TODO: 
+
 === Use Apache RocketMQ
 ==== Apache RocketMQ deploys on EC2 with directory instructions:
 NameServer Node
