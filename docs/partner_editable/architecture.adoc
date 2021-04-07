@@ -19,8 +19,8 @@ internet access for resources in the private subnets.*
 ** Linux bastion hosts in an Auto Scaling group to allow inbound Secure
 Shell (SSH) access to EC2 instances in public and private subnets.*
 * In the private subnets:
-** Amazon Elastic Compute Cloud (Amazon EC2) instances for Apache RocketMQ name servers.
-** Apache RocketMQ web console deployed on each Apache name server instance.
-** EC2 instances for Apache RocketMQ broker servers. You can deploy either one broker server in one Availability Zone or three broker servers across three Availability Zones (shown).
+** Amazon Elastic Compute Cloud (Amazon EC2) instances for Apache RocketMQ NameServers. You can deploy a NameServer cluster containing 1–3 nodes.
+** Apache RocketMQ web console deployed on each Apache NameServer instance.
+** EC2 instances for Apache RocketMQ Broker servers. You can deploy a Broker cluster of one or three nodes (shown).
 
 [.small]#*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.#

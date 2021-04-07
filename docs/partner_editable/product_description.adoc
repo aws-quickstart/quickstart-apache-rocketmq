@@ -2,4 +2,4 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-This reference architecture automatically deploys high available Apache RocketMQ cluster. It creates and configures the EC2 instances required to run Apache RocketMQ. Depending on your specific use cases, you can configure parameters in the CloudFormation template to set up the RocketMQ cluster (including NameServer and Broker Node).
+This Quick Start deploys a highly available Apache RocketMQ cluster. It automatically creates and configures the Amazon Elastic Compute Cloud (Amazon EC2) instances to host your Apache RocketMQ NameServer and Broker server nodes. You can configure parameters in the AWS CloudFormation template to set up the number of nodes for your specific use case.
