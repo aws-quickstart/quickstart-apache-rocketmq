@@ -2,4 +2,4 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-This Quick Start deploys a highly available Apache RocketMQ cluster. It automatically creates and configures the Amazon Elastic Compute Cloud (Amazon EC2) instances to host your Apache RocketMQ NameServer and Broker server nodes. You can configure parameters in the AWS CloudFormation template to set up the number of nodes for your specific use case.
+With the {partner-product-name} Quick Start, you can deploy a highly available Apache RocketMQ cluster without having to configure the underlying infrastructure. It automatically creates and configures the Amazon Elastic Compute Cloud (Amazon EC2) instances to host your Apache RocketMQ NameServer and Broker server nodes. You specify the number of Apache NameServer and Broker server nodes you want by configuring parameters in the AWS CloudFormation template during deployment.

@@ -4,4 +4,4 @@
 
 This guide provides instructions for deploying the {partner-product-short-name} Quick Start reference architecture on the AWS Cloud.
 
-https://rocketmq.apache.org/[Apache RocketMQ] is a distributed messaging and streaming media platform with low latency, high performance and reliability, trillion-level capacity and flexible scalability. Apache RocketMQ on AWS solution enables you to quickly deploy a configurable and highly available Apache RocketMQ cluster in the AWS Cloud.
+https://rocketmq.apache.org/[Apache RocketMQ] is a distributed messaging and streaming media platform with low latency, high performance and reliability, trillion-level capacity, and flexible scalability. The {partner-product-name} Quick Start helps you deploy a configurable and highly available Apache RocketMQ cluster in the AWS Cloud.
