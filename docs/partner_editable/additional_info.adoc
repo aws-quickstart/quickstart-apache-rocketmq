@@ -1,7 +1,8 @@
 // Add steps as necessary for accessing the software, post-configuration, and testing. Don’t include full usage instructions for your software, but add links to your product documentation for that information.
 //Should any sections not be applicable, remove them
 
-=== Logging into Apache RocketMQ NameServer and Broker server nodes
+=== Logging into an Apache RocketMQ NameServer or Broker server node
+
 . Add a PEM key pair. For example:
 
 [source,bash]
@@ -17,14 +18,18 @@ ssh-add -k /Users/username/tmp/rocketmqXXX.pem
 ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
 --
 
+:xrefstyle: short
 [start=3]
-. Get the IP address for the node you want.
-.. Log into the Amazon EC2 console.
-. Select the To login to Nameserver or Broker Node from Bastion Host, and how to get an IP from Nameserver or Broker node, log in to ec2 console and click on the corresponding ec2  instance, as shown in the following
+. Get the IP address of the node you want.
+.. Open the https://console.aws.amazon.com/ec2/[Amazon EC2 console].
+.. On the *Instances* screen, select the checkbox for the instance. Note the *Private IPs* in the *Description* tab, as shown in <<IPaddress>>.
 
-image::../images/NameServerIPAddress.png[NameServerAddress,width=100%,height=100%]
+[#IPaddress]
+.EC2 instance private IP address
+image::../images/NameServerIPAddress.png[NameServerAddress,width=75%,height=75%]
 
-Examples:
+[start=4]
+. From the bastion host, log into the node with the IP address. For example:
 
 [source,bash]
 --
@@ -40,13 +45,15 @@ https://aws.amazon.com/amazon-linux-2/
 [ec2-user@ip-10-0-6-235 ~]$
 --
 
-[start=4]
-. Once you are signed into Nameserver or Broker Node, you can use Apache RocketMQ’s own command-line tools.
+[start=5]
 
+. Once you are signed into the node, you can use https://rocketmq.apache.org/docs/cli-admin-tool/[Apache RocketMQ command-line tools] to query, manage, and diagnose issues.
 
 === How to view Web Console from Apache RocketMQ using your browser
 
-The default deployment installs the web console on each NameServer instance. However, as NameServer instances run on the private subnets, you cannot access the 8080 port of the NameServer private IP address directly through a browser. To do this, please follow the steps below to establish an SSH Tunnel to Bastion host and access The Nameserver Web Console via SSH Tunnel.
+The default deployment installs the web console on each NameServer instance. However, as NameServer instances run on the private subnets, you cannot access the 8080 port of the NameServer private IP address directly. 
+
+Do the following to configure an SSH Tunnel to the bastion host and access web console through it.
 
 . Using the ssh command to establish a ssh connection to the bastion host, some of the parameters in the following image need to be replaced with parameters corresponding to the user environment.
 
