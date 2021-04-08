@@ -17,8 +17,8 @@ For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/U
 
 
 == Troubleshooting
-. I cannot access the Apache RocketMQ Web Console, how can I do?
-.. First check the ssh tunnel from your desktop to bastion Host is set up correctly. Since Web Console is run on Nameserver host which is in private subnet, you will need the ssh tunnel to bastion host to connect to the Nameserver.
+. I cannot access the Apache RocketMQ web console.
+.. The Apache RocketMQ web Console runs on an Apache NameServer host in a private subnet. Verify that the SSH tunnel from your desktop to the bastion host is set up to connect to the Apache NameServer.
 .. If the ssh tunnel is setup correctly, but you still cannot open the Web Console. The reason could be Web Console process did not start correctly. You need to login to the NameServer and check the install log file at /home/ec2-user/rocketmq-deploy/install.log.
 . There is no Apache RocketMQ broker cluster show up in the Web Console, how can I do?
 .. Please login to the Broker Node and check the Broker Node install log at /home/ec2-user/rocketmq-deploy/install.log.
