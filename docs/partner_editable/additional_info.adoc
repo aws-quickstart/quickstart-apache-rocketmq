@@ -20,7 +20,7 @@ ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
 
 :xrefstyle: short
 [start=3]
-. Get the IP address of the node you want.
+. Get the IP address from the Amazon EC2 console.
 .. Open the https://console.aws.amazon.com/ec2/[Amazon EC2 console].
 .. On the *Instances* screen, select the checkbox for the instance. Note the *Private IPs* in the *Description* tab, as shown in <<IPaddress>>.
 
@@ -32,7 +32,7 @@ image::../images/NameServerIPAddress.png[NameServerAddress,width=75%,height=75%]
 . From the bastion host, log into the node with the IP address. For example:
 
 [source,bash]
---
+----
 (ec2-user@ip-10-0-136-135) $ ssh 10.0.6.235
 
 Last login: Wed Jan  6 04:55:01 2021 from ip-10-0-136-135.cn-north-1.compute.internal
@@ -43,17 +43,16 @@ Last login: Wed Jan  6 04:55:01 2021 from ip-10-0-136-135.cn-north-1.compute.int
 https://aws.amazon.com/amazon-linux-2/
 
 [ec2-user@ip-10-0-6-235 ~]$
---
+----
 
 [start=5]
-
 . Once you are signed into the node, you can use https://rocketmq.apache.org/docs/cli-admin-tool/[Apache RocketMQ command-line tools] to query, manage, and diagnose issues.
 
-=== How to view Web Console from Apache RocketMQ using your browser
+=== Viewing the Apache RocketMQ web console in a browser
 
-The default deployment installs the web console on each NameServer instance. However, as NameServer instances run on the private subnets, you cannot access the 8080 port of the NameServer private IP address directly. 
+The default deployment installs the web console on NameServer instances. However, as NameServer instances run in the private subnets, you cannot access the 8080 port of NameServer private IP addresses directly. 
 
-Do the following to configure an SSH Tunnel to the bastion host and access web console through it.
+Do the following to configure an SSH tunnel to the bastion host and access web console through it.
 
 . Using the ssh command to establish a ssh connection to the bastion host, some of the parameters in the following image need to be replaced with parameters corresponding to the user environment.
 
@@ -69,9 +68,12 @@ Example:
 --
 ssh -qTfnN -D 40011  -i "rocketMQ.pem" ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn
 --
-. After configuring the SSH tunnel, set up proxy in your browser, which has a lot of plug-ins that automatically select proxy, we are using SwitchyOmega as an example in this article.
-. To install the SwitchyOmega browser  plug-in in the following browsers: (Microsoft Edge browser please visit link:https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[this link], Firefox browser access link:https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[this link], Chrome browser access link:https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[this link]).
-. Once the SwitchyOmega plug-in is installed, open the plug-in options page and click on the "New Profile" on the left, as shown in the following image:
+. After configuring the SSH tunnel, set up a proxy manager in your browser. There are many proxy manager plug-ins available. These instructions use SwitchyOmega.
+. Install the SwitchyOmega plug-in.
+** https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[Microsoft Edge]
+** https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[Firefox]
+** https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[Google Chrome]
+. Open the SwitchyOmega options page and select *New Profile* in the left sidebar.
 
 image::../images/switchyOmega1.png[SwitchyOmega,width=50%,height=50%]
 [start=5]
