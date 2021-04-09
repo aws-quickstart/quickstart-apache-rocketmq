@@ -52,10 +52,10 @@ https://aws.amazon.com/amazon-linux-2/
 
 The default deployment installs the web console on Apache name servers. However, as Apache name servers run in the private subnets, they cannot be accessed directly through a browser. To access port 8080 of the private IP address of the Apache name server, configure an SSH connection with the bastion host SSH tunnel. Then use the SSH tunnel to access the web console. 
 
-. Establish a connection with the bastion host using SSH with the following command. Replace `_port number_`, `_.pem key pair_`, `_user name_`, and `_host name_` with your parameters.
+. Establish a connection with the bastion host using SSH with the following command. Replace `_port number_`, `_key pair.pem_`, `_user name_`, and `_host name_` with your parameters.
 
 +
-`ssh -qTfnN -D _port number_ -i "_.pem key pair_" _user name_@_host name_`
+`ssh -qTfnN -D _port number_ -i "_key pair.pem_" _user name_@_host name_`
 
 +
 For example:
@@ -99,10 +99,12 @@ image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
 . After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
 . Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
 
++
 image::../images/ec2.png[ec2,width=90%,height=90%]
 [start=10]
 . The browser should be able to display the deployed RocketMQ cluster properly, as shown in the following image:
 
++
 image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 
 === Apache RocketMQ resources
