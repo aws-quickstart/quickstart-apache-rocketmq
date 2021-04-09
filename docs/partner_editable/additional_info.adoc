@@ -50,41 +50,51 @@ https://aws.amazon.com/amazon-linux-2/
 
 === Viewing the Apache RocketMQ web console in a browser
 
-The default deployment installs the web console on NameServer instances. However, as NameServer instances run in the private subnets, you cannot access the 8080 port of NameServer private IP addresses directly. 
+The default deployment installs the web console on Apache name servers. However, as Apache name servers run in the private subnets, they cannot be accessed directly through a browser. To access port 8080 of the private IP address of the Apache name server, configure an SSH connection with the bastion host SSH tunnel. Then use the SSH tunnel to access the web console. 
 
-Do the following to configure an SSH tunnel to the bastion host and access web console through it.
+. Establish a connection with the bastion host using SSH with the following command. Replace `_port number_`, `_.pem key pair_`, `_user name_`, and `_host name_` with your parameters.
 
-. Using the ssh command to establish a ssh connection to the bastion host, some of the parameters in the following image need to be replaced with parameters corresponding to the user environment.
++
+`ssh -qTfnN -D _port number_ -i "_.pem key pair_" _user name_@_host name_`
 
-NOTE: These parameters are denoted in [red]#red#
++
+For example:
 
-Command ：
-[source,bash]
---
-ssh -qTfnN -D <PORTNUMBER> -i <KEYPAIR> <USERNAME>@<HOSTNAME>
---
-Example:
-[source,bash]
---
-ssh -qTfnN -D 40011  -i "rocketMQ.pem" ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn
---
-. After configuring the SSH tunnel, set up a proxy manager in your browser. There are many proxy manager plug-ins available. These instructions use SwitchyOmega.
-. Install the SwitchyOmega plug-in.
++
+`ssh -qTfnN -D 40011  -i "rocketMQ.pem" \ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn`
+
+. Set up a proxy manager in your browser. There are many proxy manager plug-ins available. These instructions use SwitchyOmega.
+.. Install the SwitchyOmega plug-in.
 ** https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[Microsoft Edge]
 ** https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[Firefox]
 ** https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[Google Chrome]
-. Open the SwitchyOmega options page and select *New Profile* in the left sidebar.
+
++
+
+.. Open the SwitchyOmega options page and select *New Profile* in the left sidebar.
+
++
 
 image::../images/switchyOmega1.png[SwitchyOmega,width=50%,height=50%]
-[start=5]
-. Enter the name of "New Profile" in the pop-up window and click the create button at the bottom right, as follows:
+
++
+[start=3]
+.. Enter a name and select *Create*.
+
++
 
 image::../images/switchyOmega2.png[SwitchyOmega,width=50%,height=50%]
-[start=6]
-. Enter the information for proxy server, as shown below, and click on the apple changes at the bottom left, noting that the value for port needs to be set to the local port where you set up the ssh tunnel, see the number after the first step "-D" parameter, as shown below:
-. Click on the SwitchyOmega plug-in and select the RocketMQ profile you just created, as shown below:
+
++
+[start=4]
+.. Enter the information for proxy server, as shown below, and click on the apple changes at the bottom left, noting that the value for port needs to be set to the local port where you set up the ssh tunnel, see the number after the first step "-D" parameter, as shown below:
+.. Click on the SwitchyOmega plug-in and select the RocketMQ profile you just created, as shown below:
+
++
 
 image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
+
++
 [start=8]
 . After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
 . Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
