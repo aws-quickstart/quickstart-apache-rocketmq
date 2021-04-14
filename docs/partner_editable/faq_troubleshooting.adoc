@@ -19,10 +19,10 @@ For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/U
 == Troubleshooting
 * I cannot access the Apache RocketMQ web console.
 ** The Apache RocketMQ web Console runs on an Apache NameServer host in a private subnet. Verify that the SSH tunnel from your desktop to the bastion host is set up to connect to the Apache NameServer.
-** If the SSH tunnel is setup correctly, but you still cannot open the web console, it is possible that the web console did not start properly. Log in to the NameServer and check the install log file at `/home/ec2-user/rocketmq-deploy/install.log`.
+** If the SSH tunnel is setup correctly, but you still cannot open the web console, it is possible that the web console did not start properly. Log in to the name server and check the install log file at `/home/ec2-user/rocketmq-deploy/install.log`.
 * The Apache RocketMQ Broker server cluster does not show up in the Apache RocketMQ web console.
-** Log in to the Broker server node and check the Broker node install log in `/home/ec2-user/rocketmq-deploy/install.log`. You can submit an issue to the Quick Start GitHub https://fwd.aws/wJrW8[repository] for assistance. Include the error log with your submission.
+** Log in to the broker node and check the install log in `/home/ec2-user/rocketmq-deploy/install.log`. You can submit an issue to the Quick Start GitHub https://fwd.aws/wJrW8[repository] for assistance. Include the error log with your submission.
 * How can I access the Apache RocketMQ internal logs?
-** On the NameServers and Broker servers, the internal Apache RocketMQ logs are found in `/home/ec2-user/rocketmq-deploy/`.
+** On the name server and brokers, internal Apache RocketMQ logs are found in `/home/ec2-user/rocketmq-deploy/`.
 
 

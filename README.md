@@ -1,4 +1,4 @@
-# Apache RocketMQ on the AWS Cloud
+ # Apache RocketMQ on the AWS Cloud
 
 This solution provides a one click cloudformation deployment to sets up a high available Apache RocketMQ cluster on AWS environment.
 
