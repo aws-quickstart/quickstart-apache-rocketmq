@@ -110,24 +110,39 @@ image::../images/proxyserverinfo.png[SwitchyOmega,width=50%,height=50%]
 +
 [start=5]
 .. Select *Apply Changes*. 
-.. Access SwitchyOmega through the extension icon of your browser. Select your created profile in the proxy list.
+.. Access SwitchyOmega through the extension icon of your browser. Select your created profile in the proxy list. The browser will send all traffic through the local port 40011 proxy to the bastion host.
 
 +
 
+:xrefstyle: short
+[#proxylist]
+[link=images/SwitchyOmega4.png]
+.Proxy list
 image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
 
++
 
-After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
-
-Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
+[start=3]
+. To view the Apache web console on a name server in your browser, navigate to `\http://10.0.xx.xx:8080`. Replace `xx.xx` with the private IP address of the name server. You can find the private IP address of a name server in the EC2 console.
 
 +
+:xrefstyle: short
+[#ec2console]
+[link=images/ec2.png]
+.Private IP address of an Apache name server in the EC2 console
 image::../images/ec2.png[ec2,width=90%,height=90%]
-[start=10]
-. The browser should be able to display the deployed RocketMQ cluster properly, as shown in the following image:
 
 +
+:xrefstyle: short
+<<webconsole>> shows an example of an Apache RocketMQ cluster in the Apache web console.
+
++
+
+[#webconsole]
+[link=images/ec2.png]
+.Apache web console
 image::../images/rocketMQConsole.png[console,width=90%,height=90%]
+
 
 === Apache RocketMQ resources
 
