@@ -53,6 +53,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 The default deployment installs the Apache RocketMQ web console on the name servers. However, as Apache name servers run in the private subnets, they cannot be accessed directly through a browser. To access port 8080 of the private IP address of the Apache name server, configure an SSH connection with the bastion host SSH tunnel. Then use the SSH tunnel to access the web console. 
 
+[#step1]
 . Establish a connection with the bastion host using SSH with the following command. Replace `_port number_`, `_key pair.pem_`, `_user name_`, and `_host name_` with your parameters.
 
 +
@@ -97,7 +98,7 @@ image::../images/switchyOmega2.png[SwitchyOmega,width=50%,height=50%]
 +
 [start=4]
 :xrefstyle: short
-.. Enter the *Protocol*, *Server*, and *Port* for proxy server. The port should be the local port where you set up the SSH tunnel in step 1.
+.. Enter the *Protocol*, *Server*, and *Port* for proxy server. The port should be the local port where you set up the SSH tunnel in link:#_step1[step 1].
 
 +
 
@@ -109,17 +110,16 @@ image::../images/proxyserverinfo.png[SwitchyOmega,width=50%,height=50%]
 +
 [start=5]
 .. Select *Apply Changes*. 
-
-Click on the SwitchyOmega plug-in and select the RocketMQ profile you just created, as shown below:
+.. Access SwitchyOmega through the extension icon of your browser. Select your created profile in the proxy list.
 
 +
 
 image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
 
-+
-[start=8]
-. After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
-. Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
+
+After completing this step above, the browser will send all traffic through the local port 40011 proxy to the Bastion  Host machine.
+
+Enter the private IP address of any of the deployed Nameservers in your browser plus port 8080 (for example:http://10.0.xx.xx:8080), and you can find the corresponding instance for the nameserver via EC2 Console and find the corresponding IP address, as shown below:
 
 +
 image::../images/ec2.png[ec2,width=90%,height=90%]
