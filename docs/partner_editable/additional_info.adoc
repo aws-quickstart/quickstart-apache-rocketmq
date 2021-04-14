@@ -32,6 +32,7 @@ image::../images/NameServerIPAddress.png[NameServerAddress,width=75%,height=75%]
 [start=4]
 . From the bastion host, log into the node with the IP address. For example:
 
++
 [source,bash]
 ----
 (ec2-user@ip-10-0-136-135) $ ssh 10.0.6.235
@@ -45,6 +46,7 @@ https://aws.amazon.com/amazon-linux-2/
 
 [ec2-user@ip-10-0-6-235 ~]$
 ----
++
 
 [start=5]
 . Once you are signed into the node, you can use https://rocketmq.apache.org/docs/cli-admin-tool/[Apache RocketMQ command-line tools] to query, manage, and diagnose issues.
@@ -165,12 +167,11 @@ image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 
 == Best practices for using {partner-product-short-name} on AWS
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
-Please check the following links from Apache RocketMQ official website for best practice of using RocketMQ:
 
-. link:https://rocketmq.apache.org/docs/best-practice-namesvr/[Best Practice of Nameserver]
-. link:https://rocketmq.apache.org/docs/best-practice-broker/[Best Practice of Broker]
-. link:https://rocketmq.apache.org/docs/best-practice-producer/[Best Practice of Producer]
-. link:https://rocketmq.apache.org/docs/best-practice-consumer/[Best Practice of Consumer]
+* https://rocketmq.apache.org/docs/best-practice-namesvr/[Best Practice for NameServer]
+* https://rocketmq.apache.org/docs/best-practice-broker/[Best Practice for Broker]
+* https://rocketmq.apache.org/docs/best-practice-producer/[Best Practice for Producer]
+* https://rocketmq.apache.org/docs/best-practice-consumer/[Best Practice for Consumer]
 
 
 
