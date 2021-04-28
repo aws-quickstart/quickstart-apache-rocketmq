@@ -8,7 +8,7 @@
 |Security groups | 4
 |AWS Identity and Access Management (IAM) roles | 2
 |Auto Scaling groups | 1
-|m5.large instances(NameServer Host) | 2
-|m5.xlarge instances(Broker Host) | 3
-|t2.micro instances(Bastion Host) | 1
+|m5.large instances (Apache name server hosts) | 2
+|m5.xlarge instances (Apache broker hosts) | 3
+|t2.micro instances (bastion hosts) | 1
 |===
