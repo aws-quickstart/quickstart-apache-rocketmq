@@ -4,4 +4,4 @@
 
 This guide provides instructions for deploying the {partner-product-short-name} Quick Start reference architecture on the AWS Cloud.
 
-This Quick Start is for users who <target audience and usage scenario>
+https://rocketmq.apache.org/[Apache RocketMQ] is a unified messaging engine and lightweight data processing platform. The {partner-product-name} Quick Start helps you deploy a configurable and highly available Apache RocketMQ cluster in the AWS Cloud.

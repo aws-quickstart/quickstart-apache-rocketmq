@@ -2,4 +2,4 @@
 // Briefly describe the software. Use consistent and clear branding. 
 // Include the benefits of using the software on AWS, and provide details on usage scenarios.
 
-<Describe how the software works on AWS.>
+This Quick Start sets up an Amazon Web Services (AWS) architecture that deploys an Apache RocketMQ cluster on AWS. Apache RocketMQ is a unified messaging engine and lightweight data processing platform. This Quick Start creates and configures Amazon Elastic Compute Cloud (Amazon EC2) instances to host Apache name server and broker nodes. You can configure basic cluster settings such as EC2 instance types during deployment. 
