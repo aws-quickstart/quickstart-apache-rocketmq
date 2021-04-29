@@ -29,10 +29,10 @@ Each deployment takes about {deployment_time} to complete.
 
 [cols=2*]
 |===
-^|https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template?stackName=ApacheRocketMQ&templateURL=https://aws-quickstart.s3.amazonaws.com/quickstart-apache-rocketmq/templates/rocketmq-entrypoint.template.yaml[Deploy {partner-product-short-name} into a new VPC on AWS^]
+^|https://fwd.aws/9dXW6[Deploy {partner-product-short-name} into a new VPC on AWS^]
 ^|https://aws-quickstart.s3.amazonaws.com/quickstart-apache-rocketmq/templates/rocketmq-entrypoint.template.yaml[View template^]
 
-^|https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/template?stackName=ApacheRocketMQ&templateURL=https://aws-quickstart.s3.amazonaws.com/quickstart-apache-rocketmq/templates/rocketmq.yaml[Deploy {partner-product-short-name} into an existing VPC on AWS^]
+^|https://fwd.aws/xnNG6[Deploy {partner-product-short-name} into an existing VPC on AWS^]
 ^|https://aws-quickstart.s3.amazonaws.com/quickstart-apache-rocketmq/templates/rocketmq.yaml[View template^]
 |===
 
