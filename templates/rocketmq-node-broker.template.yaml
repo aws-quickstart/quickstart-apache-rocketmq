@@ -4,6 +4,16 @@ Description: (SO8006) - This template is used for setting up a single RocketMQ B
 Metadata:
   QuickStartDocumentation:
     Order: "4"
+  QSLint:
+    Exclusions: [ W9002, W9003, W9004, W9006 ]
+  cfn-lint:
+    config:
+      ignore_checks:
+        - E9101
+        - E9904
+        - E9902
+        - E9010
+        - W9901
 Parameters:
   VPC:
     Type: AWS::EC2::VPC::Id

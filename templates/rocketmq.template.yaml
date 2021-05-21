@@ -3,6 +3,21 @@ Description: (SO8006) - Deploy Apache RocketMQ cluster on AWS. (qs-1rhfjtin3)
 Metadata:
   QuickStartDocumentation:
     Order: "2"
+  QSLint:
+    Exclusions: [ W9002, W9003, W9004, W9006 ]
+  cfn-lint:
+    config:
+      ignore_checks:
+        - E9101
+        - E9904
+        - E9902
+        - E9010
+        - W9901
+        - E3005
+        - E9903
+        - E-CFN-NAFG-W12
+      ignore_reasons:
+        E-CFN-NAFG-W12: (line 365-377) EC2 ec2:Describe* API actions do not support resource-level permission/(line 1507) Only Option
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:

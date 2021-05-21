@@ -4,13 +4,24 @@ Metadata:
   QuickStartDocumentation:
     EntrypointName: Launch into an existing VPC
     Order: "5"
+  QSLint:
+    Exclusions: [ W9002, W9003, W9004, W9006 ]
+  cfn-lint:
+    config:
+      ignore_checks:
+        - E9101
+        - E9904
+        - E9902
+        - E9010
+        - W9901
+        - E3005
+        - E9903
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
           default: Network Configuration
         Parameters:
           - NumberOfAZs
-          - AvailabilityZones
           - VPCID
           - PrivateSubnet1ID
           - PrivateSubnet2ID
@@ -48,8 +59,6 @@ Metadata:
           - QSS3KeyPrefix
           - QSS3BucketRegion
     ParameterLabels:
-      AvailabilityZones:
-        default: Availability Zones
       BastionAMIOS:
         default: Bastion host AMI operating system
       BastionInstanceType:
@@ -184,6 +193,7 @@ Parameters:
     Description: ID of your existing VPC (e.g., vpc-0343606e).
   QSS3KeyPrefix:
     AllowedPattern: '^[0-9a-zA-Z-/]*$'
+    Type: String
     ConstraintDescription:
       The Quick Start S3 key prefix can include numbers, lowercase letters,
       uppercase letters, hyphens (-), and forward slashes (/). The prefix should
@@ -205,9 +215,6 @@ Parameters:
       When using your own bucket, specify the Region. 
       See https://aws-quickstart.github.io/option1.html.'
     Type: String
-  AvailabilityZones:
-    Type: List<AWS::EC2::AvailabilityZone::Name>
-    Description: Choose two or three Availability Zones to use for the VPC subnets.
   NumberOfAZs:
     AllowedValues:
       - '2'

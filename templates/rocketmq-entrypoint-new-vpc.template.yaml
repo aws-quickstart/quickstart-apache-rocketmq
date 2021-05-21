@@ -4,6 +4,16 @@ Metadata:
   QuickStartDocumentation:
     EntrypointName: Launch into an new VPC
     Order: "1"
+  QSLint:
+    Exclusions: [ W9002, W9003, W9004, W9006 ]
+  cfn-lint:
+    config:
+      ignore_checks:
+        - E9101
+        - E9904
+        - E9902
+        - E9010
+        - W9901
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
