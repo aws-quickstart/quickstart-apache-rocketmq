@@ -15,9 +15,9 @@ Metadata:
         - W9901
         - E3005
         - E9903
-        - E-CFN-NAFG-W12
+        - ECFNNAFGW12
       ignore_reasons:
-        E-CFN-NAFG-W12: (line 365-377) EC2 ec2:Describe* API actions do not support resource-level permission/(line 1507) Only Option
+        ECFNNAFGW12: (line 365-377) EC2 ec2:Describe* API actions do not support resource-level permission/(line 1507) Only Option
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
