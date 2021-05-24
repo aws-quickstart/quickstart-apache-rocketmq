@@ -5,19 +5,6 @@ Metadata:
     Order: "2"
   QSLint:
     Exclusions: [ W9002, W9003, W9004, W9006 ]
-  cfn-lint:
-    config:
-      ignore_checks:
-        - E9101
-        - E9904
-        - E9902
-        - E9010
-        - W9901
-        - E3005
-        - E9903
-        - ECFNNAFGW12
-      ignore_reasons:
-        ECFNNAFGW12: (line 365-377) EC2 ec2:Describe* API actions do not support resource-level permission/(line 1507) Only Option
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
@@ -273,13 +260,6 @@ Conditions:
   CreateThreeReplicaSet: !Equals
     - !Ref 'BrokerClusterCount'
     - '3'
-  CnRegionCondition: !Or
-    - !Equals
-      - !Ref 'AWS::Region'
-      - cn-north-1
-    - !Equals
-      - !Ref 'AWS::Region'
-      - cn-northwest-1
   UsingDefaultBucket: !Equals
     - !Ref 'QSS3BucketName'
     - aws-quickstart
@@ -363,6 +343,15 @@ Resources:
           CidrIp: '0.0.0.0/0'
   RocketMQNodeIAMRole:
     Type: AWS::IAM::Role
+    Metadata:
+      cfn-lint:
+        config:
+          ignore_checks:
+            - EIAMPolicyWildcardResource
+            - EIAMPolicyActionWildcard
+          ignore_reasons:
+            EIAMPolicyWildcardResource: EC2 ec2:Describe* API actions do not support resource-level permission
+            EIAMPolicyActionWildcard: EC2 ec2:Describe* API actions do not support resource-level permission
     Properties:
       AssumeRolePolicyDocument:
         Statement:
@@ -519,7 +508,6 @@ Resources:
         QSS3BucketName: !Ref 'QSS3BucketName'
         QSS3KeyPrefix: !Ref 'QSS3KeyPrefix'
         QSS3BucketRegion: !Ref 'QSS3BucketRegion'
-        NameServerClusterCount: !Ref 'NameServerClusterCount'
         BrokerClusterCount: !Ref 'BrokerClusterCount'
         RocketMQVersion: !Ref 'RocketMQVersion'
         Iops: !Ref 'Iops'

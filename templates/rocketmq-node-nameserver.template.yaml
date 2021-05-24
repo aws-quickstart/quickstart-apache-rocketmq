@@ -10,10 +10,6 @@ Metadata:
     config:
       ignore_checks:
         - E9101
-        - E9904
-        - E9902
-        - E9010
-        - W9901
 Parameters:
   VPC:
     Type: AWS::EC2::VPC::Id
