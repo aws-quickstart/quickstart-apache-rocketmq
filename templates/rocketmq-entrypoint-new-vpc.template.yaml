@@ -6,10 +6,6 @@ Metadata:
     Order: "1"
   QSLint:
     Exclusions: [ W9002, W9003, W9004, W9006 ]
-  cfn-lint:
-    config:
-      ignore_checks:
-        - E9101
   AWS::CloudFormation::Interface:
     ParameterGroups:
       - Label:
