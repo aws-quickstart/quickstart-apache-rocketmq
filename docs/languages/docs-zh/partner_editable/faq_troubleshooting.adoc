@@ -1,28 +1,26 @@
-// Add any tips or answers to anticipated questions.
+// 为预期的问题添加任何提示或答案。
 
-== FAQ
+== 常见问题
 
-*Q.* I encountered a *CREATE_FAILED* error when I launched the Quick Start.
+*Q.* 我在启动Quick Start时遇到了 *CREATE_FAILED* 错误。
 
-*A.* If AWS CloudFormation fails to create the stack, relaunch the template with *Rollback on failure* set to *Disabled*. This setting is under *Advanced* in the AWS CloudFormation console on the *Configure stack options* page. With this setting, the stack’s state is retained, and the instance keeps running so that you can troubleshoot the issue. (For Windows, look at the log files in `%ProgramFiles%\Amazon\EC2ConfigService` and `C:\cfn\log`.)
-// Customize this answer if needed. For example, if you’re deploying on Linux instances, either provide the location for log files on Linux or omit the final sentence. If the Quick Start has no EC2 instances, revise accordingly (something like "and the assets keep running").
+*A.* 如果AWS CloudFormation无法创建堆栈，请重新启动模板，并将*Rollback on failure*设置为 *Disabled*。此设置位于 *Configure stack options* 页面上 AWS CloudFormation 控制台中的 *Advanced* 下。使用此设置，堆栈的状态会保留，并且实例会继续运行，以便您可以对问题进行故障排除。（对于 Windows，查看 `%ProgramFiles%\Amazon\EC2ConfigService` 和 `C:\cfn\log` 中的日志文件。）
+// 如果需要，自定义此答案。例如，如果您在 Linux 实例上部署，请提供 Linux 上日志文件的位置或省略最后一句。如果 Quick Start 没有 EC2 实例，请进行相应修改（类似于“并且资产继续运行”）。
 
-WARNING: When you set *Rollback on failure* to *Disabled*, you continue to incur AWS charges for this stack. Delete the stack when you finish troubleshooting.
+警告：当您将 *Rollback on failure* 设置为 *Disabled* 时，您将继续为此堆栈产生 AWS 费用。完成故障排除后删除堆栈。
 
-For more information, see https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html[Troubleshooting AWS CloudFormation^].
+有关更多信息，请参阅 https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html[AWS CloudFormation 疑难解答^]。
 
-*Q.* I encountered a size-limitation error when I deployed the AWS CloudFormation templates.
+*Q.* 我在部署 AWS CloudFormation 模板时遇到了大小限制错误。
 
-*A.* Launch the Quick Start templates from the links in this guide or from another S3 bucket. If you deploy the templates from a local copy on your computer or from a location other than an S3 bucket, you might encounter template-size limitations. For more information, see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html[AWS CloudFormation quotas^].
-
-
-== Troubleshooting
-* I cannot access the Apache RocketMQ web console.
-** The Apache RocketMQ web Console runs on an Apache name server in a private subnet. Verify that the SSH tunnel from your desktop to the bastion host is set up to connect to the Apache name server.
-** If the SSH tunnel is setup correctly, but you still cannot open the web console, it is possible that the web console did not start properly. Log in to the name server and check the install log file at `/home/ec2-user/rocketmq-deploy/install.log`.
-* The Apache RocketMQ broker server cluster does not show up in the Apache RocketMQ web console.
-** Log in to the broker node and check the install log in `/home/ec2-user/rocketmq-deploy/install.log`. You can submit an issue to the Quick Start GitHub https://fwd.aws/wJrW8[repository] for assistance. Include the error log with your submission.
-* How can I access the Apache RocketMQ internal logs?
-** On the name server and brokers, internal Apache RocketMQ logs are found in `/home/ec2-user/rocketmq-deploy/`.
+*A.* 从本指南中的链接或从另一个 S3 存储桶启动快速入门模板。如果您从计算机上的本地副本或从 S3 存储桶以外的位置部署模板，您可能会遇到模板大小限制。有关更多信息，请参阅 http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html[AWS CloudFormation 配额^]。
 
 
+== 故障排除
+* 我无法访问 Apache RocketMQ Web 控制台。
+** Apache RocketMQ Web 控制台在私有子网中的 Apache 名称服务器上运行。验证从桌面到堡垒主机的 SSH 隧道是否设置为连接到 Apache 名称服务器。
+** 如果 SSH 隧道设置正确，但您仍然无法打开 Web 控制台，则可能是 Web 控制台未正常启动。登录名称服务器并检查位于 `/home/ec2-user/rocketmq-deploy/install.log` 的安装日志文件。
+* Apache RocketMQ 代理服务器集群未显示在 Apache RocketMQ Web 控制台中。
+** 登录broker节点，查看`/home/ec2-user/rocketmq-deploy/install.log`中的安装日志。您可以向 Quick Start GitHub https://fwd.aws/wJrW8[repository] ​​提交问题以获得帮助。在您的提交中包含错误日志。
+* 如何访问 Apache RocketMQ 内部日志？
+** 在名称服务器和代理上，内部 Apache RocketMQ 日志位于 `/home/ec2-user/rocketmq-deploy/` 中。
