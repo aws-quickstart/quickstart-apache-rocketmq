@@ -1,8 +1,8 @@
 // Edit this placeholder text to accurately describe your architecture.
 
-This Quick Start provides two deployment options:
+此快速入门提供两个部署选项：
 
-* *Deploy {partner-product-short-name} into a new VPC*. This option builds a new AWS environment consisting of the VPC, subnets, NAT gateways, security groups, bastion hosts, and other infrastructure components. It then deploys {partner-product-short-name} into this new VPC.
-* *Deploy {partner-product-short-name} into an existing VPC*. This option provisions {partner-product-short-name} in your existing AWS infrastructure.
+* *将 {partner-product-short-name} 部署到新的 VPC*。此选项构建一个新的 AWS 环境，其中包括 VPC、子网、NAT 网关、安全组、堡垒主机和其他基础设施组件。 然后将 {partner-product-short-name} 部署到这个新的 VPC 中。
+* *将 {partner-product-short-name} 部署到现有 VPC*。此选项在您现有的 AWS 基础设施中预置 {partner-product-short-name}。
 
-The Quick Start provides separate templates for these options. It also lets you configure Classless Inter-Domain Routing (CIDR) blocks, instance types, and {partner-product-short-name} settings, as discussed later in this guide.
+快速入门为这些选项提供了单独的模板。它还允许您配置无类别域间路由 (CIDR) 块、实例类型和 {partner-product-short-name} 设置，如本指南后面所述。

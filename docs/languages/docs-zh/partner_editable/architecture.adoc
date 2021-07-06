@@ -1,26 +1,25 @@
-Deploying this Quick Start for a new virtual private cloud (VPC) with
-default parameters builds the following {partner-product-short-name} environment in the
-AWS Cloud.
+为新的 Virtual Private Cloud (VPC) 部署此快速入门
+默认参数构建以下 {partner-product-short-name} 环境
+AWS云。
 
-// Replace this example diagram with your own. Send us your source PowerPoint file. Be sure to follow our guidelines here : http://(we should include these points on our contributors giude)
 :xrefstyle: short
 [#architecture1]
-.Quick Start architecture for {partner-product-short-name} on AWS
+.AWS 上 {partner-product-short-name} 的快速入门架构
 image::../images/apache-rocketmq-architecture-diagram.png[Architecture,width=100%,height=100%]
 
-As shown in <<architecture1>>, the Quick Start sets up the following:
+如 <<architecture1>> 所示，快速入门设置如下：
 
-* A highly available architecture that spans up to three Availability Zones.*
-* A VPC configured with public and private subnets, according to AWS
-best practices, to provide you with your own virtual network on AWS.*
-* In the public subnets:
-** Managed network address translation (NAT) gateways to allow outbound
-internet access for resources in the private subnets.*
-** Linux bastion hosts in an Auto Scaling group to allow inbound Secure
-Shell (SSH) access to EC2 instances in public and private subnets.*
-* In the private subnets:
-** Amazon Elastic Compute Cloud (Amazon EC2) instances for Apache RocketMQ NameServers. You can deploy 1–3 NameServer nodes. The default is three (shown).
-** Apache RocketMQ web console running on each Apache NameServer instance.
-** EC2 instances for Apache RocketMQ Broker servers. You can deploy either one or three Broker server nodes. The default is three (shown).
+* 高度可用的架构，最多可跨越三个可用区。*
+* 根据 AWS，配置有公有和私有子网的 VPC
+最佳实践，在 AWS 上为您提供您自己的虚拟网络。*
+* 在公共子网中：
+** 托管网络地址转换 (NAT) 网关以允许出站
+私有子网中资源的 Internet 访问。*
+** Auto Scaling 组中的 Linux 堡垒主机允许入站安全
+对公有和私有子网中的 EC2 实例的 Shell (SSH) 访问。*
+* 在私有子网中：
+** 用于 Apache RocketMQ 名称服务器的 Amazon Elastic Compute Cloud (Amazon EC2) 实例。您可以部署 1-3 个 NameServer 节点。默认值为三（如图所示）。
+** 在每个 Apache NameServer 实例上运行的 Apache RocketMQ Web 控制台。
+** Apache RocketMQ 代理服务器的 EC2 实例。您可以部署一个或三个 Broker 服务器节点。默认值为三（如图所示）。
 
-[.small]#*The template that deploys the Quick Start into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.#
+[.small]#*将 Quick Start 部署到现有 VPC 的模板会跳过星号标记的组件，并提示您输入现有 VPC 配置。#

@@ -4,8 +4,8 @@
 // For the following attribute, if you have no short name, enter the same name as partner-product-name.
 :partner-product-short-name: RocketMQ
 // If there's no partner, comment partner-company-name and partner-contributors.
-:partner-company-name: AWS Great China Region Solution Team
-:doc-month: April
+:partner-company-name: 亚马逊云科技解决方案研发中心
+:doc-month: 四月
 :doc-year: 2021
 :partner-contributors: George Gu, Fan Su, Chen Chuan, Apache
 :quickstart-contributors: Troy Ameigh, Mingwei Leong, AWS Quick Start team
@@ -13,7 +13,7 @@
 // for example, 30 minutes or 60 minutes. 
 // Use hours for deployment times greater than 60 minutes (rounded to a quarter hour),
 // for example, 1.25 hours, 2 hours, 2.5 hours.
-:deployment_time: 15-20 minutes
+:deployment_time: 15-20 分钟
 :default_deployment_region: us-east-1
 :parameters_as_appendix:
 // Uncomment the following two attributes if you are using an AWS Marketplace listing.

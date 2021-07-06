@@ -1,9 +1,9 @@
 // Add steps as necessary for accessing the software, post-configuration, and testing. Don’t include full usage instructions for your software, but add links to your product documentation for that information.
 //Should any sections not be applicable, remove them
 
-=== Logging into an Apache RocketMQ NameServer or Broker server node
+=== 登录 Apache RocketMQ NameServer 或 Broker 服务器节点
 
-. Add a PEM key pair. For example:
+. 添加 PEM 密钥对。 例如：
 
 [source,bash]
 --
@@ -11,7 +11,7 @@ ssh-add -k /Users/username/tmp/rocketmqXXX.pem
 --
 
 [start=2]
-. Sign into the bastion host.
+. 登录堡垒主机。
 
 [source,bash]
 --
@@ -20,9 +20,9 @@ ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
 
 :xrefstyle: short
 [start=3]
-. Get the IP address from the Amazon EC2 console.
-.. Open the https://console.aws.amazon.com/ec2/[Amazon EC2 console].
-.. On the *Instances* screen, select the checkbox for the instance. Note the *Private IPs* in the *Description* tab, as shown in <<IPaddress>>.
+. 从 Amazon EC2 控制台获取 IP 地址。
+.. 在浏览器中打开 https://console.aws.amazon.com/ec2/[Amazon EC2 console].
+.. 在EC2的控制台*实例*窗口, 选择指定的实例. 请注意 *Description* 选项卡中的 *Private IPs*，如 <<IPaddress>>.
 
 [#IPaddress]
 [link=images/NameServerIPAddress.png]
@@ -30,7 +30,7 @@ ssh -A  ec2-user@ecXXXXXXXX.cn-north-1.compute.amazonaws.com.cn
 image::../images/NameServerIPAddress.png[NameServerAddress,width=75%,height=75%]
 
 [start=4]
-. From the bastion host, log into the node with the IP address. For example:
+. 从堡垒主机，登录到具有 IP 地址的节点。 例如：
 
 +
 [source,bash]
@@ -49,123 +49,124 @@ https://aws.amazon.com/amazon-linux-2/
 +
 
 [start=5]
-. Once you are signed into the node, you can use https://rocketmq.apache.org/docs/cli-admin-tool/[Apache RocketMQ command-line tools] to query, manage, and diagnose issues.
+. 登录节点后，您可以使用 https://rocketmq.apache.org/docs/cli-admin-tool/[Apache RocketMQ 命令行工具] 来查询、管理和诊断问题。
 
-=== Viewing the Apache RocketMQ web console in a browser
+=== 在浏览器中查看 Apache RocketMQ Web 控制台
 
-The default deployment installs the Apache RocketMQ web console on the name servers. However, as Apache name servers run in the private subnets, they cannot be accessed directly through a browser. To access port 8080 of the private IP address of the Apache name server, configure an SSH connection with the bastion host SSH tunnel. Then use the SSH tunnel to access the web console. 
+默认部署在Name Server上安装 Apache RocketMQ Web 控制台。 但是，由于Apache Name Server运行在私有子网中运行，因此无法通过浏览器直接访问它们。要访问Name Server的私有IP地址的8080端口，请配置与堡垒主机SSH隧道的SSH连接。 然后使用SSH隧道访问Web控制台。
 
 [#step1]
-. Establish a connection with the bastion host using SSH with the following command. Replace `_port number_`, `_key pair.pem_`, `_user name_`, and `_host name_` with your parameters.
+. 使用 SSH 和以下命令建立与堡垒主机的连接。 用您的参数替换 `_port number_`、`_key pair.pem_`、`_user name_` 和 `_host name_`。
 
 +
 `ssh -qTfnN -D _port number_ -i "_key pair.pem_" _user name_@_host name_`
 
 +
-For example:
+例如:
 
 +
 `ssh -qTfnN -D 40011  -i "rocketMQ.pem" \ec2-user@ec2-54-223-36-247.cn-north-1.compute.amazonaws.com.cn`
 
-. Set up a proxy manager in your browser. There are many proxy manager plug-ins available. These instructions use SwitchyOmega.
-.. Install the SwitchyOmega plug-in.
+. 在浏览器中设置代理管理器。 有许多可用的代理管理器插件。 本文使用SwitchyOmega。
+.. 安装 SwitchyOmega 插件
 ** https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega/fdbloeknjpnloaggplaobopplkdhnikc?hl=en-US[Microsoft Edge]
 ** https://addons.mozilla.org/en-US/firefox/addon/switchyomega/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search[Firefox]
 ** https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US[Google Chrome]
 
 +
 
-.. Open the SwitchyOmega options page and select *New Profile* in the left sidebar.
+.. 打开 SwitchyOmega 选项页面，然后在左侧边栏中选择 *New Profile*。
 
 +
 
 :xrefstyle: short
 [#addprofile]
 [link=images/SwitchyOmega1.png]
-.Add new SwitchyOmega profile
+.添加新的 SwitchyOmega 配置
 image::../images/switchyOmega1.png[SwitchyOmega,width=50%,height=50%]
 
 +
 [start=3]
-.. Enter a name and select *Create*.
+.. 输入名称并选择*创建*。
 
 +
 
 :xrefstyle: short
 [#profilename]
 [link=images/SwitchyOmega2.png]
-.Profile name
+.配置名称
 image::../images/switchyOmega2.png[SwitchyOmega,width=50%,height=50%]
 
 +
 [start=4]
 :xrefstyle: short
 .. Enter the *Protocol*, *Server*, and *Port* for proxy server. The port should be the local port where you set up the SSH tunnel in link:#_step1[step 1].
+.. 为代理服务器输入 *Protocol*、*Server* 和 *Port*。 该端口应该是您在链接中设置 SSH 隧道的本地端口 link:#_step1[step 1]。
 
 +
 
 [#proxyserverinfo]
 [link=images/proxyserverinfo.png]
-.Proxy servers
+.代理服务器
 image::../images/proxyserverinfo.png[SwitchyOmega,width=50%,height=50%]
 
 +
 [start=5]
 .. Select *Apply Changes*. 
-.. Access SwitchyOmega through the extension icon of your browser. Select your created profile in the proxy list. The browser will send all traffic through the local port 40011 proxy to the bastion host.
+.. 通过浏览器的扩展图标访问 SwitchyOmega。 在代理列表中选择您创建的配置文件。 浏览器将通过本地端口 40011 代理将所有流量发送到堡垒主机。
 
 +
 
 :xrefstyle: short
 [#proxylist]
 [link=images/SwitchyOmega4.png]
-.Proxy list
+.代理列表
 image::../images/switchyOmega4.png[SwitchyOmega,width=50%,height=50%]
 
 +
 
 [start=3]
-. To view the Apache web console on a name server in your browser, navigate to `\http://10.0.xx.xx:8080`. Replace `xx.xx` with the private IP address of the name server. You can find the private IP address of a name server in the EC2 console.
+. 要在浏览器中查看 Apache RocketMQ Web 控制台，请导航到 `\http://10.0.xx.xx:8080`。 将 `xx.xx` 替换为名称服务器的私有 IP 地址。 您可以在 EC2 控制台中找到Name Server的私有 IP 地址。
 
 +
 :xrefstyle: short
 [#ec2console]
 [link=images/ec2.png]
-.Private IP address of an Apache name server in the EC2 console
+.EC2 控制台中 Apache RocketMQ Name Server的私有 IP 地址
 image::../images/ec2.png[ec2,width=90%,height=90%]
 
 +
 :xrefstyle: short
-<<webconsole>> shows an example of an Apache RocketMQ cluster in the Apache web console.
+<<webconsole>> 显示了 Apache RocketMQ Web 控制台中的 Apache RocketMQ 集群示例。
 
 +
 
 [#webconsole]
 [link=images/ec2.png]
-.Apache web console
+.Apache RocketMQ web控制台
 image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 
 
-=== Apache RocketMQ resources
+=== Apache RocketMQ 集群相关资源
 
-==== NameServer nodes
+==== NameServer 节点
 
-* Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
-* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
-* Deployment script installation log used to troubleshoot error messages: `/home/ec2-user/rocketmq-deploy/install.log`
-* Apache RocketMQ web console: `/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar`
+* Apache RocketMQ 部署目录: `/home/ec2-user/rocketmq-deploy`
+* Apache RocketMQ 安装目录: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* 安装脚本对应的日志文件用于定位安装过程中遇到的问题: `/home/ec2-user/rocketmq-deploy/install.log`
+* Apache RocketMQ web控制台jar包文件所在位置: `/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar`
 
-==== Broker server nodes
+==== Broker server 节点
 
-* Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
-* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
-* Deployment script installation logs: `/home/ec2-user/rocketmq-deploy/install.log`
-* Configuration file: `/home/ec2-user/rocketmq-deploy/rocketMQ-config/`
-* Apache RocketMQ local file storage: `/home/ec2-user/rocketmq-deploy/rmqstore`
+* Apache RocketMQ 部署目录: `/home/ec2-user/rocketmq-deploy`
+* Apache RocketMQ 安装目录: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* 安装脚本对应的日志文件用于定位安装过程中遇到的问题: `/home/ec2-user/rocketmq-deploy/install.log`
+* RocketMQ配置文件所在目录: `/home/ec2-user/rocketmq-deploy/rocketMQ-config/`
+* Apache RocketMQ 本地文件存储目录 : `/home/ec2-user/rocketmq-deploy/rmqstore`
 
 
 
-== Best practices for using {partner-product-short-name} on AWS
+== {partner-product-short-name} on AWS 最佳实践
 // Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
 
 * https://rocketmq.apache.org/docs/best-practice-namesvr/[Best Practice for NameServer]
