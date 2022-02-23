@@ -25,34 +25,6 @@ project:
 #  - cn-northwest-1
   s3_bucket: ''
 tests:
-#  rocketmq-cn-north-1-2-AZ:
-#    parameters:
-#     AvailabilityZones: $[taskcat_genaz_2]
-#     BrokerClusterCount: '1'
-#     NumberOfAZs: '2'
-#     RemoteAccessCIDR: '0.0.0.0/0'
-#     VolumeSize: '100'
-#     KeyPairName: $[taskcat_getkeypair]
-#     NameServerInstanceType: 'm5.large'
-#     BrokerNodeInstanceType: 'm5.xlarge'
-#     NameServerClusterCount: '1'
-#    regions:
-#      - cn-north-1
-#    template: templates/rocketmq-entrypoint-new-vpc.template.yaml
-#  rocketmq-cn-northwest-1-3-AZ:
-#    parameters:
-#      AvailabilityZones: $[taskcat_genaz_3]
-#      BrokerClusterCount: '1'
-#      NumberOfAZs: '3'
-#      RemoteAccessCIDR: '0.0.0.0/0'
-#      VolumeSize: '100'
-#      KeyPairName: $[taskcat_getkeypair]
-#      NameServerInstanceType: 'm5.large'
-#      BrokerNodeInstanceType: 'm5.xlarge'
-#      NameServerClusterCount: '1'
-#    regions:
-#      - cn-northwest-1
-#    template: templates/rocketmq-entrypoint-new-vpc.template.yaml
   rocketmq-us-east-1-3-AZ:
     parameters:
       AvailabilityZones: $[taskcat_genaz_3]
