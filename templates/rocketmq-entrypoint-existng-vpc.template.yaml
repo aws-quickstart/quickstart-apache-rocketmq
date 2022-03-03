@@ -318,6 +318,7 @@ Parameters:
     AllowedValues:
       - 4.7.1
       - 4.8.0
+      - 4.9.2
   NameServerClusterCount:
     Default: '2'
     Type: String
