@@ -121,6 +121,7 @@ Parameters:
     AllowedValues:
       - 4.7.1
       - 4.8.0
+      - 4.9.2
   ReplicaNodeWaitForNodeInstallWaitHandle:
     Description: Pre-signed Wait Handle URL to send signal for associated wait condition
     Type: String
