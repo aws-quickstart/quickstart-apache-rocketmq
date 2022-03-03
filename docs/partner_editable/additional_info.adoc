@@ -151,14 +151,14 @@ image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 ==== NameServer nodes
 
 * Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
-* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.9.2`
 * Deployment script installation log used to troubleshoot error messages: `/home/ec2-user/rocketmq-deploy/install.log`
 * Apache RocketMQ web console: `/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar`
 
 ==== Broker server nodes
 
 * Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
-* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.9.2`
 * Deployment script installation logs: `/home/ec2-user/rocketmq-deploy/install.log`
 * Configuration file: `/home/ec2-user/rocketmq-deploy/rocketMQ-config/`
 * Apache RocketMQ local file storage: `/home/ec2-user/rocketmq-deploy/rmqstore`
