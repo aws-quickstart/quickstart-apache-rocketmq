@@ -35,7 +35,7 @@
 (`NameServerClusterCount`)|`2`|Number of Apache RocketMQ NameServer nodes (1–3).|Number of Apache RocketMQ Broker cluster nodes
 (`BrokerClusterCount`)|`3`|Number of replica set members (1 or 3).|IOPS
 (`Iops`)|`100`|IOPS of io1 EBS volume. Not applicable for EBS volume types gp2 and gp3.|Apache RocketMQ Version
-(`RocketMQVersion`)|`4.7.1`|Apache RocketMQ version.|NameServer instance type
+(`RocketMQVersion`)|`4.9.2`|Apache RocketMQ version.|NameServer instance type
 (`NameServerInstanceType`)|`m5.large`|Amazon EC2 instance type for Apache RocketMQ NameServer nodes.|Broker node instance type
 (`BrokerNodeInstanceType`)|`m5.xlarge`|Amazon EC2 instance type for Apache RocketMQ Broker nodes.|Apache RocketMQ flush disk type
 (`FlushDiskType`)|`ASYNC_FLUSH`|Apache RocketMQ flush disk type (ASYNC_FLUSH or SYNC_FLUSH).|Volume size

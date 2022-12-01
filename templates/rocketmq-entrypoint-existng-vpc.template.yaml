@@ -312,13 +312,15 @@ Parameters:
       - gp3
       - io1
   RocketMQVersion:
-    Default: 4.7.1
+    Default: 4.9.2
     Type: String
     Description: Apache RocketMQ version.
     AllowedValues:
       - 4.7.1
       - 4.8.0
       - 4.9.2
+      - 4.9.4
+      - 5.0.0
   NameServerClusterCount:
     Default: '2'
     Type: String
