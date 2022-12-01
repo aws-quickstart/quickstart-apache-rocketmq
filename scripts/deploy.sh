@@ -15,7 +15,7 @@ echo "Please enter the BrokerClusterCount, 1 or 3"
 read BrokerClusterCount
 echo "Please enter the number of nameserver(1/2/3):"
 read NameServerClusterCount
-echo "Which Apache RocketMQ version to deploy:(4.7.1 or 4.8.0 or 4.9.2)"
+echo "Which Apache RocketMQ version to deploy:(4.7.1 or 4.8.0 or 4.9.2 or 4.9.4 or 5.0.0)"
 read RocketMQVersion
 
 AWS_DEFAULT_REGION=${S3Region}

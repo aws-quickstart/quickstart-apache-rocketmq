@@ -152,7 +152,7 @@ image::../images/rocketMQConsole.png[console,width=90%,height=90%]
 ==== NameServer 节点
 
 * Apache RocketMQ 部署目录: `/home/ec2-user/rocketmq-deploy`
-* Apache RocketMQ 安装目录: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.9.2`
+* Apache RocketMQ 安装目录: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.9.2` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.9.4`  or `/home/ec2-user/rocketmq-deploy/rocketmq-all-5.0.0`
 * 安装脚本对应的日志文件用于定位安装过程中遇到的问题: `/home/ec2-user/rocketmq-deploy/install.log`
 * Apache RocketMQ web控制台jar包文件所在位置: `/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar`
 
