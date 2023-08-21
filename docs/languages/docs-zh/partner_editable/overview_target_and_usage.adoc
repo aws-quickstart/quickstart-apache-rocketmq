@@ -1,7 +1,0 @@
-// Replace the content in <>
-// Identify your target audience and explain how/why they would use this Quick Start.
-//Avoid borrowing text from third-party websites (copying text from AWS service documentation is fine). Also, avoid marketing-speak, focusing instead on the technical aspect.
-
-本指南提供了在AWS云上部署 {partner-product-short-name} 快速入门参考架构的说明。
-
-https://rocketmq.apache.org/[Apache RocketMQ] 是统一消息引擎和轻量级数据处理平台。{partner-product-name} 快速入门可帮助您在AWS云中部署可配置且高度可用的Apache RocketMQ集群。
