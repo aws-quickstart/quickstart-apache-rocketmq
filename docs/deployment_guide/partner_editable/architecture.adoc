@@ -7,22 +7,21 @@ AWS Cloud.
 
 [#architecture1]
 .Partner Solution architecture for {partner-product-short-name} on AWS
-image::../docs/deployment_guide/images/architecture_diagram.png[Architecture]
+image::../docs/deployment_guide/images/apache-rocketmq-architecture-diagram.png[Architecture,width=100%,height=100%]
 
-As shown in <<architecture1>>, this Partner Solution sets up the following:
+As shown in <<architecture1>>, the Quick Start sets up the following:
 
-* A highly available architecture that spans two Availability Zones.*
-* A virtual private cloud (VPC) configured with public and private subnets, according to AWS
+* A highly available architecture that spans up to three Availability Zones.*
+* A VPC configured with public and private subnets, according to AWS
 best practices, to provide you with your own virtual network on AWS.*
 * In the public subnets:
 ** Managed network address translation (NAT) gateways to allow outbound
 internet access for resources in the private subnets.*
-** A Linux bastion host in an Auto Scaling group to allow inbound Secure
-Shell (SSH) access to Amazon Elastic Compute Cloud (Amazon EC2) instances in public and private subnets.*
+** Linux bastion hosts in an Auto Scaling group to allow inbound Secure
+Shell (SSH) access to EC2 instances in public and private subnets.*
 * In the private subnets:
-** <item>.
-** <item>.
-// Add bullet points for any additional components that are included in the deployment. Ensure that the additional components are shown in the architecture diagram. End each bullet with a period.
-* <describe any additional components>.
+** Amazon Elastic Compute Cloud (Amazon EC2) instances for Apache RocketMQ NameServers. You can deploy 1–3 NameServer nodes. The default is three (shown).
+** Apache RocketMQ web console running on each Apache NameServer instance.
+** EC2 instances for Apache RocketMQ Broker servers. You can deploy either one or three Broker server nodes. The default is three (shown).
 
 [.small]#* The template that deploys this Partner Solution into an existing VPC skips the components marked by asterisks and prompts you for your existing VPC configuration.#

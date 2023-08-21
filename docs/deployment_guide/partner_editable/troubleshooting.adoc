@@ -2,5 +2,37 @@
 
 For troubleshooting common Partner Solution issues, refer to the https://fwd.aws/rA69w?[AWS Partner Solution General Information Guide^] and https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html[Troubleshooting CloudFormation^].
 
-// == Resources
-// Uncomment section and add links to any external resources that are specified by the partner.
+* I cannot access the Apache RocketMQ web console.
+** The Apache RocketMQ web Console runs on an Apache name server in a private subnet. Verify that the SSH tunnel from your desktop to the bastion host is set up to connect to the Apache name server.
+** If the SSH tunnel is setup correctly, but you still cannot open the web console, it is possible that the web console did not start properly. Log in to the name server and check the install log file at `/home/ec2-user/rocketmq-deploy/install.log`.
+* The Apache RocketMQ broker server cluster does not show up in the Apache RocketMQ web console.
+** Log in to the broker node and check the install log in `/home/ec2-user/rocketmq-deploy/install.log`. You can submit an issue to the Quick Start GitHub https://fwd.aws/wJrW8[repository] for assistance. Include the error log with your submission.
+* How can I access the Apache RocketMQ internal logs?
+** On the name server and brokers, internal Apache RocketMQ logs are found in `/home/ec2-user/rocketmq-deploy/`.
+
+== Apache RocketMQ resources
+
+=== NameServer nodes
+
+* Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
+* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* Deployment script installation log used to troubleshoot error messages: `/home/ec2-user/rocketmq-deploy/install.log`
+* Apache RocketMQ web console: `/home/ec2-user/rocketmq-deploy/rocketmq-console-ng-1.0.0.jar`
+
+=== Broker server nodes
+
+* Apache RocketMQ installation guide: `/home/ec2-user/rocketmq-deploy`
+* Apache RocketMQ installation directory: `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.7.1-bin-release` or `/home/ec2-user/rocketmq-deploy/rocketmq-all-4.8.0-bin-release`
+* Deployment script installation logs: `/home/ec2-user/rocketmq-deploy/install.log`
+* Configuration file: `/home/ec2-user/rocketmq-deploy/rocketMQ-config/`
+* Apache RocketMQ local file storage: `/home/ec2-user/rocketmq-deploy/rmqstore`
+
+
+
+== Best practices for using {partner-product-short-name} on AWS
+// Provide post-deployment best practices for using the technology on AWS, including considerations such as migrating data, backups, ensuring high performance, high availability, etc. Link to software documentation for detailed information.
+
+* https://rocketmq.apache.org/docs/best-practice-namesvr/[Best Practice for NameServer]
+* https://rocketmq.apache.org/docs/best-practice-broker/[Best Practice for Broker]
+* https://rocketmq.apache.org/docs/best-practice-producer/[Best Practice for Producer]
+* https://rocketmq.apache.org/docs/best-practice-consumer/[Best Practice for Consumer]

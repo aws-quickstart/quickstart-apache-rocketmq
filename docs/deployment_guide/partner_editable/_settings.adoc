@@ -1,16 +1,16 @@
-:partner-solution-project-name: partner-solution-repo-name
+:partner-solution-project-name: quickstart-apache-rocketmq
 :partner-solution-github-org: aws-quickstart
-:partner-product-name: Full Product Name
-:partner-product-short-name: Product Name
-:partner-company-name: Example Company Name, Ltd.
-:doc-month: January
+:partner-product-name: Apache RocketMQ
+:partner-product-short-name: RocketMQ
+:partner-company-name: Apache
+:doc-month: August
 :doc-year: 2023
-:partner-contributors: John Smith, {partner-company-name}
+:partner-contributors: George Gu, Fan Su, Chen Chuan, Apache
 // :other-contributors: Akua Mansa, Trek10
-:aws-contributors: Janine Singh, AWS IoT Partner team
-:aws-ia-contributors: Toni Jones, AWS Integration & Automation team
-:deployment_time: 15 minutes
-:default_deployment_region: us-east-1
+:aws-contributors: Troy Ameigh, Mingwei Leong, AWS
+//:aws-ia-contributors: Toni Jones, AWS Integration & Automation team
+:deployment_time: 15-20 minutes
+:default_deployment_-region: us-east-1
 // :private_repo:
 
 
