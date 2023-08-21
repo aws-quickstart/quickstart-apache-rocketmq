@@ -1,3 +1,0 @@
-// Include details about any licenses and how to sign up. Provide links as appropriate. If no licenses are required, clarify that. The following paragraphs provide examples of details you can provide. Remove italics, and rephrase as appropriate.
-
-No licenses are required to deploy this Quick Start. You are responsible for the cost of the AWS services and any third-party licenses used while running this Quick Start reference deployment. There is no additional cost for using this Quick Start.

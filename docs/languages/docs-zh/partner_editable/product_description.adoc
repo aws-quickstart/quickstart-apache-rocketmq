@@ -1,5 +1,0 @@
-// Replace the content in <>
-// Briefly describe the software. Use consistent and clear branding. 
-// Include the benefits of using the software on AWS, and provide details on usage scenarios.
-
-本 Quick Start 设置了一个Amazon Web Services(AWS)架构，该架构在AWS上部署了一个Apache RocketMQ集群。 Apache RocketMQ是一个统一的消息引擎和轻量级的数据处理平台。本快速入门创建和配置Amazon Elastic Compute Cloud (Amazon EC2)实例以托管Apache名称服务器和代理节点。您可以在部署期间配置基本集群设置，例如EC2实例类型。
